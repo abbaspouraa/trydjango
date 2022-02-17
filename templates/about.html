@@ -11,9 +11,22 @@
 {% block content %}
 <h1>About</h1>
 <p>this is a template</p>
-
+{#Django built in template tags#}
+    <p>
     {{ request.user }} {{ "Test" }}
     {{ my_text }}, {{ my_number }}
+    </p>
+
+    <ul>
+    {% for my_sub_item in my_list %}
+        {% if my_sub_item == 1 %}
+            <li>{{ forloop.counter }} - {{ my_sub_item|add:22 }}</li>
+        {% else %}
+            <li>{{ request.user }} - {{ my_sub_item|stringformat:"s" |add:'n22' }}</li>
+        {% endif %}
+    <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+    {% endfor %}
+    </ul>
 
 {% endblock %}
 </body>
