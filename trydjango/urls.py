@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, room_view, about_view
+from products.views import product_detail_view
 
 urlpatterns = [
+    path('product/', product_detail_view),
     path('about/', about_view, name= 'about'),
     path('room/', room_view, name= 'room'),
     path('', home_view, name="home"),
