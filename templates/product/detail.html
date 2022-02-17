@@ -3,10 +3,12 @@
 {%  block content %}
 
     <h1>Item</h1>
-    <h2>{{ title }}</h2>
+    <h2>{{ object.title }}</h2>
     <p>
-        {% if description %}{{ description }}{% else %}Description coming Soon{% endif %}
-        {% if summary %}{{ summary }}{% else %}Summary coming Soon{% endif %}
+        {% if  object.description %}{{  object.description }}{% else %}Description coming Soon{% endif %}
+    </p>
+    <p>
+        {% if  object.summary %}{{  object.summary }}{% else %}Summary coming Soon{% endif %}
     </p>
 
 {% endblock %}
